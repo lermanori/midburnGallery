@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
-  margin-left: 18%;
-//  margin-top: 0.5%;
-  margin-right: 18%;
-  //margin-bottom: 0.5%;
+  margin-left: 6%;
+/*  margin-top: 0.5%;*/
+  margin-right: 6%;
+  /*margin-bottom: 0.5%;*/
 }
 
 /* Create four equal columns that sits next to each other */
@@ -16,13 +16,8 @@
 }
 
 .container {
-  margin-top: 4px
-  margin-bottom: 4px;
-  margin-left: 20px;
-  margin-right: 2px;
-
-
-  vertical-align: middle;
+/*  vertical-align: middle;
+  width:100%;*/
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
