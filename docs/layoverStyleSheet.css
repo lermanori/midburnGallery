@@ -32,11 +32,11 @@ img {vertical-align: middle;}
 
 /* Position the "next button" to the right */
 .next {
-  right: 0%;
+  right: 0;
   border-radius: 3px 0 0 3px;
 }
 .prev{
-	left:0%
+	left:0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -101,21 +101,17 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
 .btn {
   background-color: #79a6d2;
   border: none;
-/*	position: ;*/
+  border-radius: 7px;
+  /*	position: ;*/
   display: block;
   margin: 0 auto;
   color: white;
   padding: 10px 30px;
   text-align: center;
-  font-size: 16px;
+/* font-size: 16px;*/
 
 
 
@@ -124,3 +120,28 @@ img {vertical-align: middle;}
 }
 
 .btn:hover {opacity: 1}
+
+/* On smaller screens, decrease text size */
+@media screen and (min-width: 300px) {
+  .prev, .next {font-size: 15px}
+  .numbertext{font-size: 10px}
+  .btn{font-size: 10px}
+}
+@media screen and (min-width: 500px) {
+  .prev, .next {font-size: 20px}
+  .numbertext{font-size: 12px}
+  .btn{font-size: 15px}
+
+}
+@media screen and (min-width: 800px) {
+  .prev, .next {font-size: 50px}
+  .numbertext{font-size: 23px}
+  .btn{font-size: 20px}
+
+}
+@media screen and (min-width: 1000px) {
+  .prev, .next {font-size: 70px}
+  .numbertext{font-size: 25px}
+  .btn{font-size: 25px}
+
+}

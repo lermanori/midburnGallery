@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,36 +19,57 @@
 
 	<style>
 		body {
-			margin:0;
-			padding:0;
-			overflow:auto;
+			margin: 0;
+			padding: 0;
+			overflow: auto;
 			background-color: #F0FFFF;
 		}
-		.paragraph{
+
+		.paragraph {
 			text-align: center;
-			font-size: 20px;
+			/*	font-size: 20px;*/
 			font: calibri;
 		}
-		.w3-panel{
+
+		.w3-panel {
 			margin-left: 5%;
 			margin-right: 5%;
 
 
-			}
-			@media screen and(min-width: 600px){
-				.paragraph{
-					font-size: 60px;
-				}
 		}
 
+		@media screen and (min-width: 200px) {
+			.paragraph {
+				font-size: 25px;
+			}
+		}
 
+		@media screen and (min-width: 800px) {
+			.paragraph {
+				font-size: 30px;
+			}
+		}
+
+		@media screen and (min-width: 1000px) {
+			.paragraph {
+				font-size: 35px;
+			}
+		}
+
+		@media screen and (min-width: 1200px) {
+			.paragraph {
+				font-size: 40px;
+			}
+		}
 	</style>
 </head>
+
 <body>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<div class="w3-panel w3-blue w3-round-xlarge" id="topPanel">
-  <p class ="paragraph">
-Midburn Gallery</p>
-</div>
+		<p class="paragraph">
+			Midburn Gallery</p>
+	</div>
 </body>
+
 </html>
