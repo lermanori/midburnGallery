@@ -98,7 +98,7 @@ class FullScreenLayover{
    this.rightButton.parent(this.mainDivContainer);
 
      var br = createElement('br','');
-     br.parent(this.mainDivContainer);
+     //br.parent(this.mainDivContainer);
 
     this.dotsContainer = createDiv("");
     this.dotsContainer.style('text-align','center');
