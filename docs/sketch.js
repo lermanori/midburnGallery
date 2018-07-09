@@ -88,21 +88,24 @@ class FullScreenLayover{
     this.leftButton.class('prev');
     this.leftButton.hide();
     this.leftButton.mouseClicked(minusSlides);
-    //this.leftButton.parent(this.mainDivContainer);
+    this.leftButton.parent(this.mainDivContainer);
 
     this.rightButton = createElement("a","&#10095;");
     this.rightButton.class('next');
     this.rightButton.hide();
     this.rightButton.mouseClicked(plusSlides);
 
-  //  this.rightButton.parent(this.mainDivContainer);
+   this.rightButton.parent(this.mainDivContainer);
 
      var br = createElement('br','');
      br.parent(this.mainDivContainer);
 
     this.dotsContainer = createDiv("");
     this.dotsContainer.style('text-align','center');
-    this.dotsContainer.parent(this.mainDivContainer);
+    var panel = select("#topPanel");
+    console.log(panel);
+    this.backToGridButton.parent(panel);
+  //  this.dotsContainer.parent(this.mainDivContainer);
     this.dotsContainer.hide();
 
 
@@ -119,7 +122,7 @@ class FullScreenLayover{
   }
   addframe(src,index)
   {
-    var h = window.innerHeight|| document.documentElement.clientHeight||document.body.clientHeight;
+  //  var h = window.innerHeight|| document.documentElement.clientHeight||document.body.clientHeight;
     var frameDivContainer = createDiv("");
     frameDivContainer.class("mySlides fade");
 
@@ -128,11 +131,11 @@ class FullScreenLayover{
 
     frameDivNumberText.parent(frameDivContainer);
 
-    h*=8/10;
+  //  h*=8/10;
     this.centerImage = createImg(src);
 
-    this.centerImage.style('height',h.toString() + 'px');
-    this.centerImage.style('margin-left','22%');
+    //this.centerImage.style('height',h.toString() + 'px');
+    this.centerImage.style('width','100%');
     this.centerImage.parent(frameDivContainer);
 
     var caption = createDiv("");
