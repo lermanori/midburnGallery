@@ -97,7 +97,8 @@ class FullScreenLayover{
 
    this.rightButton.parent(this.mainDivContainer);
 
-     var br = createElement('br','');
+     this.br = createElement('br','');
+     this.br.hide();
      //br.parent(this.mainDivContainer);
 
     this.dotsContainer = createDiv("");
@@ -171,6 +172,7 @@ class FullScreenLayover{
     this.rightButton.show();
     this.leftButton.show();
     this.backToGridButton.show();
+    this.br.show();
   }
   hide()
   {
@@ -179,6 +181,8 @@ class FullScreenLayover{
     this.rightButton.hide();
     this.leftButton.hide();
     this.backToGridButton.hide();
+    this.br.hide();
+
   }
 
 }
