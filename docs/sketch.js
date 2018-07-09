@@ -97,11 +97,12 @@ class FullScreenLayover{
 
    this.rightButton.parent(this.mainDivContainer);
 
-     var br = createElement('br','');
-     //br.parent(this.mainDivContainer);
+
 
     this.dotsContainer = createDiv("");
     this.dotsContainer.style('text-align','center');
+    this.dotsContainer.style('margin-top','2%');
+
     var panel = select("#topPanel");
     console.log(panel);
     this.backToGridButton.parent(panel);
@@ -171,6 +172,7 @@ class FullScreenLayover{
     this.rightButton.show();
     this.leftButton.show();
     this.backToGridButton.show();
+
   }
   hide()
   {
@@ -179,6 +181,8 @@ class FullScreenLayover{
     this.rightButton.hide();
     this.leftButton.hide();
     this.backToGridButton.hide();
+
+
   }
 
 }
