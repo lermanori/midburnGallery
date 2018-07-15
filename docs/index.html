@@ -21,7 +21,7 @@
 			margin:0;
 			padding:0;
 			overflow:auto;
-			background-color: #F0FFFF;
+			background-color: #E4E4E4;
 		}
 		.paragraph{
 			text-align: center;
@@ -31,6 +31,7 @@
 		.w3-panel{
 			margin-left: 5%;
 			margin-right: 5%;
+			background-color: #262626;
 
 
 			}
@@ -44,10 +45,27 @@
 	</style>
 </head>
 <body>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<div class="w3-panel w3-blue w3-round-xlarge" id="topPanel">
-  <p class ="paragraph">
-Midburn Gallery</p>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<div class="topnav" id="myTopnav">
+	  <a href="#home" class="active">Midburn-Gallery</a>
+	  <a href="#news">News</a>
+	  <a href="#contact">Contact</a>
+	  <a href="#about">About</a>
+	  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	    <i class="fa fa-bars"></i>
+	  </a>
+	</div>
+	<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+
 </body>
 </html>

@@ -19,6 +19,8 @@ noCanvas();
   addStyleSheet('photoTileStyleSheet.css');
   addStyleSheet('gridStyleSheet.css');
   addStyleSheet('layoverStyleSheet.css');
+  addStyleSheet('topNavStyleSheet.css');
+
 
   fullScreenLayover = new FullScreenLayover();
   mainGrid = new Grid();
@@ -79,6 +81,8 @@ class FullScreenLayover{
     this.backToGridButton.hide();
     this.backToGridButton.class("btn");
 
+
+
     this.mainDivContainer = createDiv("");
     this.mainDivContainer.hide();
     this.mainDivContainer.class("slideshow-container");
@@ -100,12 +104,11 @@ class FullScreenLayover{
 
 
     this.dotsContainer = createDiv("");
-    this.dotsContainer.style('text-align','center');
-    this.dotsContainer.style('margin-top','2%');
 
-    var panel = select("#topPanel");
-    console.log(panel);
-    this.backToGridButton.parent(panel);
+    this.dotsContainer.style('text-align','center');
+    this.dotsContainer.style('margin','2%');
+
+
   //  this.dotsContainer.parent(this.mainDivContainer);
     this.dotsContainer.hide();
 
@@ -171,7 +174,9 @@ class FullScreenLayover{
     this.dotsContainer.show();
     this.rightButton.show();
     this.leftButton.show();
+    this.backToGridButton.style('width',this.mainDivContainer.style('width'));
     this.backToGridButton.show();
+
 
   }
   hide()

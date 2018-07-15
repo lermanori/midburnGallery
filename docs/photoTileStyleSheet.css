@@ -16,6 +16,9 @@
   width: 100%;
   height: auto;
 margin: 0 auto;
+opacity: 0.6;
+transition: .9s ease;
+
 
 }
 
@@ -35,6 +38,6 @@ margin: 0 auto;
   text-align: center;
 }
 /* When you mouse over the container, fade in the overlay title */
-.container:hover .overlay {
+.container:hover .image {
   opacity: 1;
 }
