@@ -20,10 +20,15 @@ noCanvas();
   addStyleSheet('gridStyleSheet.css');
   addStyleSheet('layoverStyleSheet.css');
   addStyleSheet('topNavStyleSheet.css');
+  addStyleSheet('layoutGridStyleSheet.css');
+
 
 
   fullScreenLayover = new FullScreenLayover();
   mainGrid = new Grid();
+  var wrapper = select(".wrapper");
+  mainGrid.parent(wrapper);
+
   for (var i = 0; i < jsonImagesInfo.items.length; i++) {
 
     var path = jsonImagesInfo.items[i].url;
@@ -154,20 +159,6 @@ class FullScreenLayover{
   }
 
 
-
-/*
-  loadImage(index)
-  {
-    this.claculateAllSrc(index);
-    this.centerImage.attribute('src',this.centerSrc);
-  }
-*/
-/*
-  claculateAllSrc(index)
-  {
-    this.centerSrc = jsonImagesInfo.items[index].url;
-  }
-  */
   show()
   {
     this.mainDivContainer.show();

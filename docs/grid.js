@@ -40,4 +40,8 @@ class Grid
 		this.rowHtmlObj.show();
 		this.rowHtmlObj.style('display','flex');
 	}
+	parent(TheParent)
+	{
+		this.rowHtmlObj.parent(TheParent);
+	}
 }
