@@ -1,0 +1,23 @@
+{
+  "name": "midburn_gallery",
+  "version": "1.0.0",
+  "description": "gallery for midburn event",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lermanori/midburnGallery.git"
+  },
+  "author": "ori lerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lermanori/midburnGallery/issues"
+  },
+  "homepage": "https://github.com/lermanori/midburnGallery#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
