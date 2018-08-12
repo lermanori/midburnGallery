@@ -1,0 +1,15 @@
+.wrapper{
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "section section section";
+  grid-template-rows: 10% 80% 10%;
+  grid-template-columns:   1fr;
+  grid-gap: 4px;
+}
+.topnav{
+  grid-area: header;
+}
+.row{
+  grid-area: section;
+}
