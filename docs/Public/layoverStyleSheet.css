@@ -33,11 +33,11 @@ img {vertical-align: middle;}
 
 /* Position the "next button" to the right */
 .next {
-  right:20.5%;
+  right:0;
   border-radius: 3px 0 0 3px;
 }
 .prev{
-	left:20.5%;
+	left:0;
 }
 
 /* On hover, add a black background color with a little bit see-through */

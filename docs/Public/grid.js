@@ -4,6 +4,10 @@ class Grid
 {
 	constructor()
 	{
+		this.initialize();
+	}
+	initialize()
+	{
 		this.rowHtmlObj = createDiv("");
 		this.rowHtmlObj.class('row');
 		this.curruentColumn = 0;
@@ -30,6 +34,11 @@ class Grid
 		let imgHtmlObj = frameObj.getContainerObj();
 		imgHtmlObj.parent(this.colsArr[this.curruentColumn]);
 		this.leftspots--;
+	}
+	clear()
+	{
+		this.rowHtmlObj.remove();
+		this.initialize();
 	}
 	hide()
 	{
