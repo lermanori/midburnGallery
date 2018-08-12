@@ -17,7 +17,7 @@ function listen() {
 // Anything in the public directory will be served
 // This is just like python -m SimpleHTTPServer
 // We could also add routes, but aren't doing so here
-app.use(express.static('Public'));
+app.use(express.static('docs/Public'));
 app.get('/testing/:value',on_search);
 function on_search(req,res)
 {
