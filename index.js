@@ -33,13 +33,13 @@ var value = params.value;
 var returnValue;
 switch (value) {
   case 'sorted':
-    returnValue = "midburnPhotos//ImageInfoSortedByColor.JSON";
+    returnValue = "docs//midburnPhotos//ImageInfoSortedByColor.JSON";
     break;
     case 'unsorted':
-    returnValue ="midburnPhotos//ImageInfo.json";
+    returnValue ="docs//midburnPhotos//ImageInfo.json";
     break;
   default:
-    returnValue = "midburnPhotos//ImageInfoSortedByColor.JSON";
+    returnValue = "docs//midburnPhotos//ImageInfoSortedByColor.JSON";
     break;
 }
 return returnValue;
