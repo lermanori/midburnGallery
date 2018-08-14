@@ -86,7 +86,7 @@
 			<i class="fa fa-bars"></i>
 		</a>
 			<div class="search-container">
-				<form id="searchBar">
+				<form id="searchBar" action="">
 					<input type="text" placeholder="Search.." name="search" id="searchField" formtarget="_blank">
 					<button type="button"><i class="fa fa-search submit"></i></button>
 				</form>
@@ -102,6 +102,17 @@
 				x.className = "topnav";
 			}
 		}
+	</script>
+	<script type="text/javascript">
+
+	function stopRKey(evt) {
+	  var evt = (evt) ? evt : ((event) ? event : null);
+	  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+	  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+	}
+
+	document.onkeypress = stopRKey;
+
 	</script>
 
 </body>
