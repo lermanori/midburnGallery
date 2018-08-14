@@ -93,7 +93,7 @@ when they are hoverd on by the mouse
    /*class for the textbox (input) of the searchBar*/
   .topnav input[type=text] {
     float: left;
-    width: 89%;
+    width: 85%;
     margin: 1px;
   }
   /*class for the icon of the magnifying glass in the submit buttton of the searchBar*/
