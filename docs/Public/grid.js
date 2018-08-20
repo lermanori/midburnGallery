@@ -37,6 +37,10 @@ class Grid
 	}
 	clear()
 	{
+		 var slides = selectAll(".mySlides");
+		for (var i = 0; i < slides.length; i++) {
+			slides[i].remove();
+		}
 		this.rowHtmlObj.remove();
 		this.initialize();
 	}

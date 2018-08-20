@@ -15,6 +15,7 @@ function currentSlide(n) {
   showSlides(slideIndex);
 }
 
+
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
