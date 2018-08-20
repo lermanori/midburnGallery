@@ -6,8 +6,8 @@ let mainGrid;
 let styleSheets;
 
 function preload() {
-  jsonImagesInfo = loadJSON(prefixToFile + "\\ImageInfoSortedByColor.json");
   styleSheets = loadJSON('styleSheets.json');
+  jsonImagesInfo = loadJSON(prefixToFile + "\\ImageInfoSortedByColor.json");
 }
 function setup() {
   noCanvas();
