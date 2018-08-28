@@ -39,7 +39,7 @@ switch (value) {
     returnValue ="docs//midburnPhotos//ImageInfo.json";
     break;
   default:
-    returnValue = "docs//midburnPhotos//ImageInfoSortedByColor.JSON";
+    returnValue = null;
     break;
 }
 return returnValue;

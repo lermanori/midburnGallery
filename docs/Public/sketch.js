@@ -3,19 +3,31 @@ let prefixToFile = 'midburnPhotos\\';
 let jsonImagesInfo;
 let fullScreenLayover;
 let mainGrid;
+let loader;
 let styleSheets;
+
+function stopRKey(i_evt) {
+  var evt = (i_evt) ? i_evt : ((event) ? event : null);
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+}
+
+document.onkeypress = stopRKey;
 
 function preload() {
   styleSheets = loadJSON('styleSheets.json');
   jsonImagesInfo = loadJSON(prefixToFile + "\\ImageInfoSortedByColor.json");
 }
+
 function setup() {
   noCanvas();
   loadStyleSheets();//uses already loaded json file stylesheets and load all the stylesheets in it
   fullScreenLayover = new FullScreenLayover();//class that represents the element that is revaeld when the user click on an image;
   mainGrid = new Grid();//class that represents the grid of images
+  loader = new Loader();
   let wrapper = select(".wrapper");//insertion of the grid element into the css Grid that is called wrapper and is dividing the grid from the top tool bar
   mainGrid.parent(wrapper);
+  loader.parent(wrapper);
   loadImages();//uses jsonImagesInfo who at this time is initalized to load the json content of jsonImagesInfo sortedByColor and can be changed according to search
   let searchBar = select(".fa-search");
   searchBar.mouseClicked(searchBarSubmitValue);
@@ -27,13 +39,23 @@ function searchBarSubmitValue()
   let searchValue = select("#searchField");
   let searchString = searchValue.value();
   console.log("/testing/"+searchString);
+
   loadJSON("/testing/"+searchString,on_loadJson);
+  loader.show();
+  mainGrid.hide();
 }
 function on_loadJson(value)
 {
 console.log(value);
-jsonImagesInfo = value;
+if (value == null)
+{
+  jsonImagesInfo = value;
+}
 mainGrid.clear();
+
+loader.hide();
+mainGrid.show();
+
 loadImages();
 }
 //end section -not supposed to be here

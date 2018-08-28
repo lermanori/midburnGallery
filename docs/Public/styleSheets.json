@@ -9,8 +9,12 @@
     },
     {
       "url": "layoverStyleSheet.css"
-    }, {
+    },
+    {
       "url": "layoutGridStyleSheet.css"
+    },
+    {
+      "url": "loaderStyleSheet.css"
     }
   ]
 }

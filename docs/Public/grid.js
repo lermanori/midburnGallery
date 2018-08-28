@@ -4,7 +4,10 @@ class Grid
 {
 	constructor()
 	{
+		this.emptyMessage = "no images to show";
 		this.initialize();
+		this.loaded = false;
+
 	}
 	initialize()
 	{
@@ -15,6 +18,8 @@ class Grid
 		this.leftspots = this.k_colCapacity;
 		this.colsArr = [];
 		this.addNewcolumn();
+		this.divEmptyMessage= createDiv(this.emptyMessage);
+		this.divEmptyMessage.parent(this.rowHtmlObj);
 	}
 	addNewcolumn()
 	{
@@ -27,6 +32,8 @@ class Grid
 	}
 	addNewPhoto(frameObj)
 	{
+		this.divEmptyMessage.hide();
+		this.loaded = true;
 		if(this.leftspots==0)
 		{
 			this.addNewcolumn();
@@ -37,10 +44,12 @@ class Grid
 	}
 	clear()
 	{
+		this.loaded = false;
 		 var slides = selectAll(".mySlides");
 		for (var i = 0; i < slides.length; i++) {
 			slides[i].remove();
 		}
+		this.divEmptyMessage.remove();
 		this.rowHtmlObj.remove();
 		this.initialize();
 	}
@@ -56,5 +65,31 @@ class Grid
 	parent(TheParent)
 	{
 		this.rowHtmlObj.parent(TheParent);
+	}
+
+
+
+
+}
+class Loader
+{
+	constructor()
+	{
+		this.loaderHtmlObject = createDiv("");
+		this.loaderHtmlObject.class('loader');
+		this.loaderHtmlObject.hide();
+
+	}
+	parent(i_parent)
+	{
+			this.loaderHtmlObject.parent(i_parent);
+	}
+	show()
+	{
+			this.loaderHtmlObject.show();
+	}
+	hide()
+	{
+			this.loaderHtmlObject.hide();
 	}
 }
