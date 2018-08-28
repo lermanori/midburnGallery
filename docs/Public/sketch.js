@@ -47,7 +47,7 @@ function searchBarSubmitValue()
 function on_loadJson(value)
 {
 console.log(value);
-if (value == null)
+if (value != null)
 {
   jsonImagesInfo = value;
 }

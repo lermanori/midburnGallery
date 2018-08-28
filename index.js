@@ -30,6 +30,7 @@ function on_search(req,res)
 function mapToFile(params)
 {
 var value = params.value;
+console.log(value);
 var returnValue;
 switch (value) {
   case 'sorted':
@@ -42,5 +43,6 @@ switch (value) {
     returnValue = null;
     break;
 }
+console.log(returnValue);
 return returnValue;
 }
