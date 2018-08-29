@@ -48,6 +48,7 @@ function on_notLoadJson()
 {
   jsonImagesInfo = null;
   loadImages();
+  mainGrid.divEmptyMessage.show();
   mainGrid.show();
 }
 
@@ -68,7 +69,6 @@ function draw() {
 function loadImages() {
   if(jsonImagesInfo!=null)
   {
-
   mainGrid.divEmptyMessage.hide();
   for (var i = 0; i < jsonImagesInfo.items.length; i++) {
     var path = jsonImagesInfo.items[i].url;
@@ -79,9 +79,7 @@ function loadImages() {
     mainGrid.addNewPhoto(photoTile);
   }
 }
-  else {
-    mainGrid.divEmptyMessage.show();
-  }
+
   loader.hide();
 
 }

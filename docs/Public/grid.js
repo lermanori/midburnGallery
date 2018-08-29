@@ -19,6 +19,7 @@ class Grid
 		this.divEmptyMessage= createDiv(this.emptyMessage);
 		this.divEmptyMessage.parent(this.rowHtmlObj);
 		this.divEmptyMessage.id('emptyMessage');
+		this.divEmptyMessage.hide();
 
 	}
 	addNewcolumn()
@@ -32,7 +33,6 @@ class Grid
 	}
 	addNewPhoto(frameObj)
 	{
-		this.divEmptyMessage.hide();
 		this.loaded = true;
 		if(this.leftspots==0)
 		{
