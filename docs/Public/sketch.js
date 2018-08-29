@@ -39,24 +39,24 @@ function searchBarSubmitValue()
   let searchValue = select("#searchField");
   let searchString = searchValue.value();
   console.log("/testing/"+searchString);
-
-  loadJSON("/testing/"+searchString,on_loadJson);
   loader.show();
-  mainGrid.hide();
+  mainGrid.clear();
+  loadJSON("/testing/"+searchString,on_loadJson,on_notLoadJson);
+
 }
+function on_notLoadJson()
+{
+  jsonImagesInfo = null;
+  loadImages();
+  mainGrid.show();
+}
+
 function on_loadJson(value)
 {
 console.log(value);
-if (value != null)
-{
-  jsonImagesInfo = value;
-}
-mainGrid.clear();
-
-loader.hide();
-mainGrid.show();
-
+jsonImagesInfo = value;
 loadImages();
+mainGrid.show();
 }
 //end section -not supposed to be here
 
@@ -64,7 +64,12 @@ function draw() {
 
 }
 //uses json images info that is preloaded.
+
 function loadImages() {
+  if(jsonImagesInfo!=null)
+  {
+
+  mainGrid.divEmptyMessage.hide();
   for (var i = 0; i < jsonImagesInfo.items.length; i++) {
     var path = jsonImagesInfo.items[i].url;
     var photoTile = new PhotoTile(path, "", i);
@@ -73,6 +78,12 @@ function loadImages() {
     photoTile.getContainerObj().mouseClicked(on_mouseClickedOverPhoto);
     mainGrid.addNewPhoto(photoTile);
   }
+}
+  else {
+    mainGrid.divEmptyMessage.show();
+  }
+  loader.hide();
+
 }
 //callback for event when ever picture is clicked on
 function on_mouseClickedOverPhoto(data) {

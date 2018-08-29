@@ -23,7 +23,11 @@ function on_search(req,res)
 {
   var params = req.params;
    var pathToJson = mapToFile(params);
-  var jsonImagesInfo = fs.readFileSync(pathToJson);
+   var jsonImagesInfo = null;
+   if(pathToJson!= null)
+   {
+     jsonImagesInfo = fs.readFileSync(pathToJson);
+   }
   res.send(jsonImagesInfo);
 }
 //logic should be changed to a diffrent component (file etc)

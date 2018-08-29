@@ -1,4 +1,3 @@
-
 /*jshint esversion: 6 */
 class Grid
 {
@@ -7,7 +6,6 @@ class Grid
 		this.emptyMessage = "no images to show";
 		this.initialize();
 		this.loaded = false;
-
 	}
 	initialize()
 	{
@@ -20,6 +18,8 @@ class Grid
 		this.addNewcolumn();
 		this.divEmptyMessage= createDiv(this.emptyMessage);
 		this.divEmptyMessage.parent(this.rowHtmlObj);
+		this.divEmptyMessage.id('emptyMessage');
+
 	}
 	addNewcolumn()
 	{
@@ -65,31 +65,5 @@ class Grid
 	parent(TheParent)
 	{
 		this.rowHtmlObj.parent(TheParent);
-	}
-
-
-
-
-}
-class Loader
-{
-	constructor()
-	{
-		this.loaderHtmlObject = createDiv("");
-		this.loaderHtmlObject.class('loader');
-		this.loaderHtmlObject.hide();
-
-	}
-	parent(i_parent)
-	{
-			this.loaderHtmlObject.parent(i_parent);
-	}
-	show()
-	{
-			this.loaderHtmlObject.show();
-	}
-	hide()
-	{
-			this.loaderHtmlObject.hide();
 	}
 }
