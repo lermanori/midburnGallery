@@ -38,10 +38,10 @@ console.log(value);
 var returnValue;
 switch (value) {
   case 'sorted':
-    returnValue = "docs//midburnPhotos//ImageInfoSortedByColor.JSON";
+    returnValue = "docs/midburnPhotos/ImageInfoSortedByColor.JSON";
     break;
     case 'unsorted':
-    returnValue ="docs//midburnPhotos//ImageInfo.json";
+    returnValue ="docs/midburnPhotos/ImageInfo.json";
     break;
   default:
     returnValue = null;
