@@ -39,8 +39,10 @@ function searchBarSubmitValue()
   let searchValue = select("#searchField");
   let searchString = searchValue.value();
   console.log("/testing/"+searchString);
+  fullScreenLayover.hide();
   loader.show();
   mainGrid.clear();
+  fullScreenLayover.clearDots();
   loadJSON("/testing/"+searchString,on_loadJson,on_notLoadJson);
 
 }
@@ -50,6 +52,7 @@ function on_notLoadJson()
   loadImages();
   mainGrid.divEmptyMessage.show();
   mainGrid.show();
+
 }
 
 function on_loadJson(value)

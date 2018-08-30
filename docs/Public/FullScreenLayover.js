@@ -86,6 +86,13 @@ class FullScreenLayover {
 
     dot.parent(this.dotsContainer);
   }
+  clearDots()
+  {
+    var dots = selectAll(".dot");
+   for (var i = 0; i < dots.length; i++) {
+     dots[i].remove();
+   }
+  }
   addframe(src, index) {
     //  var h = window.innerHeight|| document.documentElement.clientHeight||document.body.clientHeight;
     var frameDivContainer = createDiv("");
