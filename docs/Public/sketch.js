@@ -19,7 +19,7 @@ document.onkeypress = stopRKey;
 function preload() {
   styleSheets = loadJSON('styleSheets.json');
   jsonImagesInfo = loadJSON(prefixToFile + "\\ImageInfoSortedByColor.json");
-  jsonCategoriesInfo = loadJSON(prefixToFile + "\\jsonCategoriesInfo.json");
+  jsonCategoriesInfo = loadJSON(prefixToFile + "\\JsonCategoriesInfo.json");
 }
 
 function setup() {
