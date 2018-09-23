@@ -18,6 +18,8 @@
 	<script src="FullScreenLayover.js"></script>
 	<script src="styleSheetUtils.js"></script>
 	<script src="Loader.js"></script>
+	<script src="ModalBox.js"></script>
+
 
 
 
@@ -80,9 +82,9 @@
 	<div class="wrapper">
 		<div class="topnav" id="myTopnav">
 			<a href="/" class="active">Midburn-Gallery</a>
-			<a href="#news">categories</a>
-			<a href="#contact">Contact</a>
-			<a href="#about">About</a>
+			<a href="javascript:void(0);" id="categoriesButton">categories</a>
+			<a href="#contact" onclick="openContact()">Contact</a>
+			<a href="#about" onclick="openAbout()">About</a>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 
 			<i class="fa fa-bars"></i>
@@ -116,6 +118,10 @@
 	document.onkeypress = stopRKey;
 */
 	</script>
+
+
+
+
 
 </body>
 

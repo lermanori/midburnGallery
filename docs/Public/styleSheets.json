@@ -15,6 +15,9 @@
     },
     {
       "url": "loaderStyleSheet.css"
+    },
+    {
+      "url": "modalBoxStyleSheet.css"
     }
   ]
 }

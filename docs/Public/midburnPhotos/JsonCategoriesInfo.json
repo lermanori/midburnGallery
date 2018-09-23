@@ -1,0 +1,6 @@
+{
+  "subject":"categories","items":[
+    {"subject":"sorted","backImgPath":"midburnPhotos\\sorted.png","pathToFile":"midburnPhotos\\ImageInfoSortedByColor.json"},
+    {"subject":"unsorted","backImgPath":"midburnPhotos\\unsorted.jpg","pathToFile":"midburnPhotos\\ImageInfo.json"}
+  ]
+}

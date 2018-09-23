@@ -5,6 +5,8 @@ let fullScreenLayover;
 let mainGrid;
 let loader;
 let styleSheets;
+let modalAbout;
+let modalContacts;
 
 function stopRKey(i_evt) {
   var evt = (i_evt) ? i_evt : ((event) ? event : null);
@@ -17,6 +19,7 @@ document.onkeypress = stopRKey;
 function preload() {
   styleSheets = loadJSON('styleSheets.json');
   jsonImagesInfo = loadJSON(prefixToFile + "\\ImageInfoSortedByColor.json");
+  jsonCategoriesInfo = loadJSON(prefixToFile + "\\jsonCategoriesInfo.json");
 }
 
 function setup() {
@@ -25,14 +28,28 @@ function setup() {
   fullScreenLayover = new FullScreenLayover();//class that represents the element that is revaeld when the user click on an image;
   mainGrid = new Grid();//class that represents the grid of images
   loader = new Loader();
+  var body = select('body');
+  modalAbout = new ModalBox("testing about");
+  modalAbout.parent(body);
+  modalContacts = new ModalBox("testing contacts");
+  modalContacts.parent(body);
   let wrapper = select(".wrapper");//insertion of the grid element into the css Grid that is called wrapper and is dividing the grid from the top tool bar
   mainGrid.parent(wrapper);
   loader.parent(wrapper);
   loadImages();//uses jsonImagesInfo who at this time is initalized to load the json content of jsonImagesInfo sortedByColor and can be changed according to search
   let searchBar = select(".fa-search");
   searchBar.mouseClicked(searchBarSubmitValue);
+  let categoriesButton = select("#categoriesButton");
+  categoriesButton.mouseClicked(categoriesButton_onClick);
 }
-
+function categoriesButton_onClick()
+{
+  mainGrid.clear();
+  fullScreenLayover.hide();
+  fullScreenLayover.clearDots();
+  mainGrid.divEmptyMessage.hide();
+  loadCategories();
+}
 //shouldnt sit here now for backend testing and studing
 function searchBarSubmitValue()
 {
@@ -46,13 +63,13 @@ function searchBarSubmitValue()
   loadJSON("/testing/"+searchString,on_loadJson,on_notLoadJson);
 
 }
+
 function on_notLoadJson()
 {
   jsonImagesInfo = null;
   loadImages();
   mainGrid.divEmptyMessage.show();
   mainGrid.show();
-
 }
 
 function on_loadJson(value)
@@ -68,6 +85,23 @@ function draw() {
 
 }
 //uses json images info that is preloaded.
+function loadCategories()
+{
+  for (var i = 0; i < jsonCategoriesInfo.items.length; i++) {
+    var path = jsonCategoriesInfo.items[i].backImgPath;
+    var photoTile = new PhotoTile(path, "", i);
+    photoTile.getContainerObj().mouseClicked(on_mouseClickedOverCategory);
+    mainGrid.addNewPhoto(photoTile);
+  }
+}
+function on_mouseClickedOverCategory(data)
+{
+  console.log(data);
+  var categoryIndex = parseInt(data.srcElement.id);
+  var pathToCategoryJson = jsonCategoriesInfo.items[categoryIndex].pathToFile;
+  mainGrid.clear();
+  loadJSON(pathToCategoryJson,on_loadJson,on_notLoadJson);
+}
 
 function loadImages() {
   if(jsonImagesInfo!=null)
@@ -82,9 +116,10 @@ function loadImages() {
     mainGrid.addNewPhoto(photoTile);
   }
 }
-
+else {
+  loadCategories();
+}
   loader.hide();
-
 }
 //callback for event when ever picture is clicked on
 function on_mouseClickedOverPhoto(data) {
@@ -92,4 +127,12 @@ function on_mouseClickedOverPhoto(data) {
   slideIndex = parseInt(data.srcElement.id);
   currentSlide(slideIndex + 1);
   fullScreenLayover.show();
+}
+function openAbout()
+{
+  modalAbout.show();
+}
+function openContact()
+{
+  modalContacts.show();
 }

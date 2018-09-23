@@ -9,15 +9,15 @@ class Grid
 	}
 	initialize()
 	{
+		this.divEmptyMessage= createDiv(this.emptyMessage);
 		this.rowHtmlObj = createDiv("");
 		this.rowHtmlObj.class('row');
 		this.curruentColumn = 0;
 		this.k_colCapacity =1;
 		this.leftspots = this.k_colCapacity;
 		this.colsArr = [];
-		this.addNewcolumn();
-		this.divEmptyMessage= createDiv(this.emptyMessage);
 		this.divEmptyMessage.parent(this.rowHtmlObj);
+		this.addNewcolumn();
 		this.divEmptyMessage.id('emptyMessage');
 		this.divEmptyMessage.hide();
 
